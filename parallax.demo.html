@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+	
+    <meta charset="utf-8">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Parallax Demo by George Lee Patterson</title>
+
+    <link href="css/glp_base.css" rel="stylesheet" type="text/css">
+    
+	<style>
+		html, body {
+			height:100%;
+		}
+	
+	</style>
+</head>
+<body>
+	
+	<section id="placeholder" style="line-height:100%;vertical-align:middle;text-align:center;background:DarkCyan;color:white;font-weight:bold;font-size:32px;">
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		THIS IS A PLACEHOLDER
+	</section>
+
+	<section id="prlx_wndw">
+
+		<div class="layer1" data-type="parallax2">
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			Parallax Demo with no Image.
+		</div>
+		
+	</section>
+
+	<h1>Parallax Demo with 50% Width, Second one Reverse=True</h1>
+
+	<section id="prlx_wndw_2">
+
+		<div class="layer2" data-type="parallax2">
+		<img class="vertical parallax-bg" src="images/tall_building.jpg" /></div><div class="layer3" data-reverse="true" data-type="parallax2">
+		<img class="vertical-reverse parallax-bg" src="images/tall_building.jpg" /></div>
+		
+	</section>
+	
+	<h1>Parallax Demo with 33.3% Width, Second one Reverse=True</h1>
+	
+	<section id="prlx_wndw_2">
+
+		<div class="layer4" data-type="parallax2">
+		<img class="vertical parallax-bg" src="images/tall_building.jpg" /></div><div class="layer5" data-reverse="true" data-type="parallax2">
+		<img class="vertical parallax-bg" src="images/tall_building.jpg" /></div><div class="layer6" data-type="parallax2">
+		<img class="vertical parallax-bg" src="images/tall_building.jpg" /></div>
+		
+	</section>
+	
+	<h1>Horizontal Parallax - Reverse</h1>
+	
+	<section id="prlx_wndw_3">
+
+		<div class="layer8" data-direction="horizontal" data-type="parallax2">
+		<img class="horizontal parallax-bg" src="images/wide_low.jpg" /></div><div class="layer9" data-reverse="true" data-direction="horizontal" data-type="parallax2">
+		<img class="horizontal parallax-bg" src="images/long_train.png" /></div>
+		
+	</section>
+		
+	<h1>Horizontal Parallax</h1>
+	
+	<section id="prlx_wndw_3">
+
+		<div class="layer7 parallax-hold" data-hold="true" data-direction="horizontal" data-type="parallax2">
+				<img class="horizontal parallax-bg" src="images/wide_low.jpg" /></div><div class="layer9" data-direction="horizontal" data-type="parallax2">
+				<img class="horizontal parallax-bg" src="images/long_train.png" /></div>
+				
+		
+	</section>
+	
+	<section id="prlx_wndw_3">
+	
+		<div>
+			
+			Just a section to space content.
+			
+		</div>
+	
+	</section>
+
+	<div class="separate"></div>
+	
+	<section id="prlx_wndw_2">
+		
+		<div style="height:100%;line-height:100%;vertical-align:middle;width:100%; text-align:center;background:DarkCyan;color:white;font-weight:bold;font-size:32px;">
+		
+			THE END! 
+			
+		</div>
+		
+	</section>
+	
+	
+	
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	
+	
+	<script src="js/glp_frmwk.js"></script>
+	
+</body>
+
+</html>

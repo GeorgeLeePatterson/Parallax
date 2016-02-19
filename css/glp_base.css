@@ -1,0 +1,782 @@
+
+/* ------------------------------------------- Tooltip ------------------------------------------- */
+
+div.data {
+	display:none;
+}
+
+
+div.ui-tooltip {
+  border:2px solid black;
+  display: block;
+  line-height: 1;
+  position: absolute;
+  vertical-align:middle;
+  visibility: visible;
+  z-index: 250;
+}
+
+div.ui-tooltip:after  {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-top-color: #000;
+  border-width: 5px 5px 0;
+}
+
+div.ui-tooltip.accented:after { 
+	border-top-color:#707070;
+}
+
+div.ui-tooltip.dimmed:after {
+	border-top-color:#828282;
+}
+
+div.ui-tooltip.info:after { 
+	border-top-color:#33abd3;
+}
+
+div.ui-tooltip.warning:after { 
+	border-top-color:#ea961e;
+}
+
+div.ui-tooltip.problem:after { 
+	border-top-color:#cc1a20;
+}
+
+div.ui-tooltip.top:after {
+  left: 50%;
+  bottom: -6px;
+  margin-left: -5px;
+  content:"";
+}
+div.ui-tooltip.right:after {
+  top: 50%;
+  left: -8px;
+  margin-top: -2px;
+  content:"";
+  -ms-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+  transform:rotate(90deg);
+}
+div.ui-tooltip.left:after  {
+  top: 50%;
+  right: -8px;
+  margin-top: -2px;
+  content:"";
+  -ms-transform:rotate(270deg);
+    -moz-transform:rotate(90deg);
+  -webkit-transform:rotate(270deg);
+  transform:rotate(270deg);
+}
+div.ui-tooltip.bottom:after  {
+  left: 50%;
+  top: -7px;
+  margin-left: -5px;
+  content:"";
+  -ms-transform:rotate(180deg);
+    -moz-transform:rotate(90deg);
+  -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+
+div.ui-tooltip.pull-right:after {
+	right:10px;
+	left:auto;
+	margin-left:0;
+}
+div.ui-tooltip.pull-left:after {
+	left:10px;
+	right:inherit;
+	margin-left:0;
+}
+
+/* BASE THEME FOR TOOLTIP*/
+
+.ui-tooltip {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000;
+  border-radius: 4px;
+  border:2px solid black;
+  font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 5px;
+}
+
+/* ---------- Accented ---------- */
+
+.ui-tooltip.accented {
+	background:#707070;
+	border:solid 1px #707070;
+}
+
+.ui-tooltip.accented:hover {
+	background:#828282;
+	border:solid 1px #828282;
+}
+
+/* ---------- Dimmed ---------- */
+
+.ui-tooltip.dimmed {
+	background:#828282;
+	border:solid 1px #828282;
+}
+
+.ui-tooltip.dimmed:hover {
+	background:#949494;
+	border:solid 1px #949494;
+}
+
+/* ---------- Info ---------- */
+
+.ui-tooltip.info {
+	background:#33abd3;
+	border:solid 1px #33abd3;
+}
+
+.ui-tooltip.info:hover {
+	background:#3fbde7;
+	border:solid 1px #3fbde7;
+}
+
+/* ---------- Warning ---------- */
+
+.ui-tooltip.warning {
+	background:#ea961e;
+	border:solid 1px #ea961e;
+}
+
+.ui-tooltip.warning:hover {
+	background:#f4a32f;
+	border:solid 1px #f4a32f;
+}
+
+/* ---------- Problem ---------- */
+
+.ui-tooltip.problem {
+	background:#cc1a20;
+	border:solid 1px #cc1a20;
+}
+
+.ui-tooltip.problem:hover {
+	background:#ec272d;
+	border:solid 1px #ec272d;
+}
+  
+    
+/* ------------------------------------------- Menu ------------------------------------------- */
+
+/* Treatment default */
+.ui-menu {
+    display:inline-block;
+    margin:0;
+    padding:0;
+    left:0;
+    right:0;
+    width:100%;
+	z-index:200;
+    background-color:white;
+}
+
+.ui-menu .labels {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ui-menu .labels * {
+	cursor:pointer;
+	display:inline-block;
+    z-index:210;
+    background-color:white;
+}
+
+.ui-menu .labels * a {
+    color:black;
+	cursor:pointer;
+	display:block;
+    height:100%;
+    width:100%;
+    margin-right:10px;
+    z-index:210;
+}
+
+.ui-menu .labels *.active {
+    /**/
+}
+
+/* Entire panel object */
+.ui-menu .panel {
+    border-top:1px solid #c6c6c6;
+    height: 575px;
+    width:100%;
+    left:0;
+    margin: 0 auto;
+    position: absolute;
+	text-align:left;/*reset any text-align properties*/
+	z-index: 200;
+	background-color:white;
+}
+
+/* Individual panel divs */
+.ui-menu .panel > div {	
+	margin-left:auto;
+	margin-right:auto;
+	height:100%;
+	width: 900px;
+}
+
+/* Individual panel divs, active Menu */
+.ui-menu.active div.ui-menu.panel {
+    /**/
+}
+
+/* Pulled this out for ease of testing, to turn off and on display quickly */
+.ui-menu .panel, div.ui-menu .panel > div { 	
+	display:none;	
+}
+
+/* All three sections of any panel */
+.ui-menu .panel > div > * {
+	display:inline-block;
+	float:left;
+	height:100%;
+}
+
+/* First sub-menu */
+.ui-menu .panel > div > ul {
+	background-color:white;
+}
+
+/* First and second sub-menus */
+.ui-menu .panel > div > ul, div.ui-menu .panel > div > ul + div {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+	width:25%;
+	height:100%;
+}
+
+/* Second sub-menu panel */
+.ui-menu .panel > div > ul + div ul {
+	visibility:hidden;
+	list-style-type:none;
+    padding: 0;
+    margin: 0;
+	width:100%;
+	height:100%;
+	background-color:white;
+}
+
+/* Image panel */
+.ui-menu .panel > div > div:last-child {	
+	height:100%;
+	width: 50%;
+	background-color:white;
+}
+
+/* All list items, whether anchors or spans, etc. */
+.ui-menu .panel > div ul li * {
+	cursor:pointer;
+	display:block;
+	height:40px;
+	line-height:40px;
+	padding-left:10px;
+	text-decoration:none;
+	vertical-align:middle;
+	width: auto;
+}
+
+.ui-menu .panel > div > ul li.active * {
+	color:white;
+	background-color:#1890C7;
+}
+
+.ui-menu .panel > div > ul + div li * {
+	color:#616161;
+}
+
+.ui-menu .panel > div > ul + div li *:hover {
+	color:#1890C7;
+}
+
+.ui-menu .overlay {
+	display:none;
+	left:0;
+	position:absolute;
+	opacity:.6;
+    overflow-y: hidden;
+	width:100%;
+	z-index: 190;
+	background-color:black;
+}
+
+/* ------------------------------------------- Billboard ------------------------------------------- */
+
+div.ui-billboard {
+	position: relative;
+	overflow:hidden;
+	margin-left:auto;
+	margin-right:auto;
+	width:970px;
+	height:475px;
+}
+
+div.ui-billboard div.slides {
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+div.ui-billboard div.slides div {
+	width:100%;
+	height:100%;
+	cursor:pointer;
+}
+
+div.ui-billboard div.slides div:first-child {
+	position:absolute;
+	left:-100%;
+}
+
+div.ui-billboard div.slides div:last-child {
+	position:absolute;
+	top:0;
+	right:-100%;
+}
+
+div.ui-billboard div.billboard-button {
+	position:absolute;
+	top:50%;
+}
+
+div.ui-billboard div.next-button, div.ui-billboard div.previous-button {
+	width:50px;
+	height:50px;
+	font-size:40px;
+	line-height:39px;
+	display:none;
+	margin-top:-25px;
+}
+
+div.ui-billboard div.next-button {
+    cursor: pointer;
+	right:10px;
+}
+
+div.ui-billboard div.previous-button {
+    cursor: pointer;
+	left:10px;
+}
+
+/* ---------- Image Map Testing ---------- */
+
+div.image-map-test {
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	width:970px;
+	height:475px;
+}
+
+/* ------------------------------------------- THEME ------------------------------------------- */
+
+/* ---------- Billboard ---------- */
+
+div.ui-billboard {
+	width:970px;
+	height:475px;
+}
+
+div.ui-billboard div.next-button, div.ui-billboard div.previous-button {
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	box-shadow:0px 0px 8px rgba(0,0,0,0.4);
+	-webkit-box-shadow:0px 0px 8px rgba(0,0,0,0.4);
+	-moz-box-shadow:0px 0px 8px rgba(0,0,0,0.4);
+	text-align:center;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.3);
+	border:solid 1px #009720;
+	background:#009821;
+	background:-moz-linear-gradient(top, #6EC688 0%, #1EAB4F 40%, #009821 41%, #009821 58%, #4FBB70 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#6EC688), color-stop(40%,#1EAB4F), color-stop(41%,#009821), color-stop(58%,#009821), color-stop(100%,#4FBB70));
+	background:-webkit-linear-gradient(top, #6EC688 0%,#1EAB4F 40%,#009821 41%,#009821 58%,#4FBB70 100%);
+	background:-o-linear-gradient(top, #6EC688 0%,#1EAB4F 40%,#009821 41%,#009821 58%,#4FBB70 100%);
+	background:-ms-linear-gradient(top, #6EC688 0%,#1EAB4F 40%,#009821 41%,#009821 58%,#4FBB70 100%);
+	background:linear-gradient(top, #6EC688 0%,#1EAB4F 40%,#009821 41%,#009821 58%,#4FBB70 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#6EC688', endColorstr='#4FBB70',GradientType=0 );
+}
+
+/* ---------- Menu ---------- */
+
+.ui-menu .panel {
+	-webkit-box-shadow: 0 8px 8px -10px black;
+	-moz-box-shadow: 0 8px 8px -10px black;
+	box-shadow: 0 8px 8px -10px black;
+}
+
+.ui-menu .labels * {
+	font-family: "Baskerville", serif;
+}
+
+.ui-menu .labels *:hover, .ui-menu .labels *.active {
+    /**/
+}
+
+.ui-menu .panel > div > * {
+	font-family: "Open Sans", Arial, Helvetica, Geneva, sans-serif;
+	font-size:12px;
+}
+
+.ui-menu .panel > div > ul li * {
+	font-weight:bold;
+	color:black;
+}
+
+/* JUNK STYLES BELOW, ONLY FOR TESTING */
+
+#container {	
+	width: 100%;
+	margin-left:auto;
+	margin-right:auto;
+    margin-top:10px;
+	text-align: center;
+}
+
+.temp_image_style {
+	display:block;
+	text-align:center;
+}
+
+.temp_image_style img {
+	width:300px;
+	height:auto;
+    margin-top:60px;
+}
+
+.temp_image_label {
+	text-align:center;
+	color:#1890C7;
+	font-size:14px;
+    margin-top:40px;
+}
+
+.temp_image_label hr {
+    border: 0;
+    border-bottom: 1px dotted #1890C7;
+    background: #999;
+	width:80px;
+}
+
+#tooltip_container {
+    position: relative;
+    width:980px;
+    margin:0 auto;
+}
+
+/* ------------------------------------------- Upload ------------------------------------------- */
+
+.ui-file-upload {
+    color: #222;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:20px;
+    position:relative;
+    
+}
+.ui-file-upload a.toggle-dd{
+    cusor:pointer;
+}
+.ui-file-upload form {
+    display:block;
+    padding: 10px 40px;
+}
+.ui-file-upload form span {
+    color: #484848;
+}
+.ui-file-upload .files-block {
+    display:block;
+    text-align:justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+.ui-file-upload .files-block .drop-area, .ui-file-upload .files-block .label {
+    display:inline-block;
+    text-align:center;
+    width:300px;
+}
+.ui-file-upload .files-block .drop-area {
+    background-color:#aaa;
+    display:inline-block;
+	height:200px;
+    margin-top:10px;
+    vertical-align:middle;
+    
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.ui-file-upload .files-block div.drop-area.warning {
+    border-bottom: 4px solid red;
+}
+.ui-file-upload .files-block .label {
+    color:#8d8d8d;
+    font-size:32px;
+    margin-top:25%;
+}
+/* Below is for centering content horizontally in div */
+.ui-file-upload .files-block:after {
+    content:'';
+    display:inline-block;
+    width:100%;
+}
+.ui-file-upload .drop-area input {
+    display: none;
+}
+.ui-file-upload .inputs-block {
+    padding: 0 110px;
+    display:block;
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+       
+}
+/* Below is for centering content horizontally in div */
+.ui-file-upload .inputs-block:after {
+    content:'';
+    display: inline-block;
+    width:100%;
+       
+}
+.ui-file-upload .inputs-block input[type=file] {
+    width:80px;
+    text-align:center;
+    display:none;
+}
+.ui-file-upload .notification {
+    color: red;
+    font-size:.8em;
+    margin:10px;
+}
+/* Fixes for the File Upload Page only */
+.logo {
+    width:800px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+.logo span {
+    font-family:"Open Sans", Arial, Helvetica, Geneva, sans-serif;
+	text-align:center;
+	font-size:10px;
+	color:#676A9A;
+	line-height:0px; 
+}
+input.btn-frw {
+    float:right;
+}
+
+/* ------------------------------------------- Parallax ------------------------------------------- */
+
+.anim-wrapper {
+	
+	top: 0;
+	left: 0;
+	overflow:hidden;
+	position:relative;
+	width:100%;
+	
+}
+.parallax-stage {
+	display:inline-block;
+	position:absolute;
+	width:100%;	
+}
+
+div, 
+nav, 
+ul, 
+li, 
+header, 
+footer {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#placeholder {
+	display: block;
+	position: relative;
+	background-color: BurlyWood;
+	width: 100%;
+	height: 100%;
+}
+
+#prlx_wndw {
+	background-color: Chocolate;
+	margin-bottom:100px;
+	position:relative;
+	width: 100%;
+	height: 50%;
+	overflow:hidden;
+}
+
+#prlx_wndw_2 {
+	background-color: DeepSkyBlue;
+	margin-top: 100px;
+	margin-bottom: 500px;
+	position:relative;
+	width: auto;
+	min-width:100%;
+	height: 100%;
+	overflow:hidden;
+    white-space: nowrap;
+}
+
+/*---------- VERTICAL -----------*/
+
+.layer1 {
+	background:gray;
+	border-top: 30px solid black;
+	border-bottom: 30px solid yellow;
+	display: inline-block;
+	left: 0;
+	position: absolute;
+	top:0;
+	width: 25%;
+	height: 900px;
+}
+  
+.layer2 {
+	background:purple;
+	display: inline-block;
+	text-align:center;
+	position: relative;
+	height: auto;
+	width:50%;
+}
+
+.layer3 {
+	display: inline-block;
+	position: relative;
+	text-align:center;
+	height: auto;
+	width:50%;
+}
+  
+.layer4 {
+	display: inline-block;
+	position: relative;
+	text-align:center;
+	height: auto;
+	width:33.3%;
+}
+
+.layer5 {
+	display: inline-block;
+	position: relative;
+	text-align:center;
+	height: auto;
+	width:33.3%;
+}
+.layer6 {
+	display: inline-block;
+	position: relative;
+	text-align:center;
+	height: auto;
+	width:33.3%;
+}
+
+img.vertical {
+	width:auto;
+    width: auto\9; /* ie8 */
+    max-width: 100%;
+	min-width: 100%;
+    height: auto;
+	top:0;
+}
+img.vertical-reverse {
+	width:auto;
+    width: auto\9; /* ie8 */
+    max-width: 100%;
+	min-width: 100%;
+    height: auto;
+	bottom:100%;
+}
+/*---------- HORIZONTAL -----------*/
+
+img.horizontal {
+	position:absolute;
+	right:0;
+	top:0;
+	width:auto;
+	min-height: 100%;
+    height: 100%;
+}
+
+#prlx_wndw_3 {
+	background-color: DeepSkyBlue;
+/*
+	margin-top: 100px;
+	margin-bottom: 100px;
+*/
+	position:relative;
+	width: 100%;
+	min-width:100%;
+	height: 100%;
+	overflow:hidden;
+    white-space: nowrap;
+}
+
+.layer7 {
+	display: inline-block;
+	position: absolute;
+	width:100%;
+	height: 100%;
+	z-index: 0;
+	
+}
+
+.layer8 {
+	display: inline-block;
+	position: absolute;
+	width:100%;
+	height: 100%;
+	z-index: 3;
+}
+
+.layer9 {
+	display: inline-block;
+	position: absolute;
+	width:100%;
+	height: 100%;
+	bottom: 10px;
+	z-index: 1;
+}
+
+.parallax-hold {
+	
+	position:absolute;
+/*	right:0;*/
+	
+}
+
+.parallax-hold-reverse {
+	
+	position:absolute;
+	left:0;
+	
+}
+div.separate {
+	
+	height:1500px;
+	width:100%;
+	
+	
+}
